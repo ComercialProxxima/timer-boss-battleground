@@ -4,10 +4,11 @@ import { Timer } from './Timer';
 
 interface BossProps {
   type: 'yellow' | 'green';
-  position: { x: number; y: number };
+  x: number;
+  y: number;
 }
 
-export const Boss = ({ type, position }: BossProps) => {
+export const Boss = ({ type, x, y }: BossProps) => {
   const [isActive, setIsActive] = useState(false);
   const duration = type === 'yellow' ? 60 : 30;
 
@@ -24,7 +25,7 @@ export const Boss = ({ type, position }: BossProps) => {
   return (
     <div
       className={`absolute cursor-pointer group transition-all duration-300`}
-      style={{ left: `${position.x}%`, top: `${position.y}%` }}
+      style={{ left: `${x}%`, top: `${y}%` }}
       onClick={handleClick}
     >
       <div className={`relative w-8 h-8 ${type === 'yellow' ? 'text-yellow-500' : 'text-green-500'}`}>

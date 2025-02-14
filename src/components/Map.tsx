@@ -19,7 +19,7 @@ export const Map = () => {
         className="w-full h-full object-cover"
       />
       {BOSS_POSITIONS.map((boss, index) => (
-        <Boss key={index} type={boss.type} position={boss.position} />
+        <Boss key={index} type={boss.type} x={boss.x} y={boss.y} />
       ))}
     </div>
   );
